@@ -30,21 +30,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1:8000','*']
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-        },
-    },
-}
+
 
 
 # Application definition
@@ -60,6 +46,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.runserver_nonstatic',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -146,7 +134,7 @@ STATICFILES_DIRS=[
 
 STATIC_ROOT=os.path.join(BASE_DIR,'assests')
 
-django_heroku.settings(locals())
+ STATICFILES_STORAGE='whitenoise.storage.CompressedStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
