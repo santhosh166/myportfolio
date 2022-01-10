@@ -134,7 +134,7 @@ STATICFILES_DIRS=[
 
 STATIC_ROOT=os.path.join(BASE_DIR,'assests')
 
- STATICFILES_STORAGE='whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE='whitenoise.storage.CompressedStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
