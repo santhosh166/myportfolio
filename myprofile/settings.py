@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 
 
@@ -29,7 +30,7 @@ SECRET_KEY = 'django-insecure-jcp#g$@av^6gn1!dr(8!j#+vs#sz7w_5ak$jy*ug&+y=oo4r#g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
 
 
@@ -133,6 +134,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'myprofile/static')
     
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT=os.path.join(BASE_DIR,'assests')
 
@@ -147,3 +149,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
