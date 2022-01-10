@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-jcp#g$@av^6gn1!dr(8!j#+vs#sz7w_5ak$jy*ug&+y=oo4r#g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1:8000','*']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -134,7 +134,7 @@ STATICFILES_DIRS=[
 
 STATIC_ROOT=os.path.join(BASE_DIR,'assests')
 
-STATICFILES_STORAGE='whitenoise.storage.CompressedStaticFilesStorage'
+
 
 
 MEDIA_URL = '/media/'
