@@ -141,6 +141,9 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'myprofile/static')
     
 ]
+
+
+django_heroku.settings(locals())
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT=os.path.join(BASE_DIR,'assests')
@@ -161,4 +164,3 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
