@@ -1,2 +1,2 @@
 
-web: gunicorn myprofile.wsgi --preload --log-file -
+web: gunicorn myprofile.wsgi
