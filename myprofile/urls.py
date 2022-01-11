@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('cv.urls')),
 ]
-urlpatterns += [ url(r'^uploads/(?P.)$', serve,{'document_root': settings.MEDIA_ROOT}), url(r'^static/(?P.)$', serve,{'document_root': settings.STATIC_ROOT}), ]
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
   
