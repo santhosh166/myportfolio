@@ -1,1 +1,1 @@
-web: gunicorn myprofile:app
+web: gunicorn myprofile.wsgi
