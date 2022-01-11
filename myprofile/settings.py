@@ -15,6 +15,9 @@ from pathlib import Path
 import os
 import django_heroku
 import cloudinary_storage
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 
