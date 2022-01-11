@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+import cloudinary_storage
 
 
 
@@ -143,6 +144,10 @@ STATIC_ROOT=os.path.join(BASE_DIR,'assests')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CLOUDINARY_STORAGE = { 'CLOUD_NAME': 'dshcpkcig', 'API_KEY': '722452151957269', 'API_SECRET': 'JYbgWskXYHmlQWg07zyRwCkL0o4', }
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # Default primary key field type
